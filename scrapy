@@ -17,8 +17,7 @@ while(True):
         with open('results.txt','a') as acct:
             for url_ in url:
                 print("Processing {}...".format(url_))
-                r_new = requests.get(url_)
-                soup_new = BeautifulSoup(r_new.text)
+                soup_new = BeautifulSoup(r.text)
                 for tr in soup_new.find_all('tr', align='center'):
                     stack = []
                     for td in tr.findAll('td'):
